@@ -10,6 +10,10 @@
   <!-- 네비게이션 -->
   <nav class="navbar">
     <div class="logo">FitShare</div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
     <ul class="nav-menu">
       <li><a href="#features">기능</a></li>
       <li><a href="#flow">플로우</a></li>
@@ -17,20 +21,24 @@
       <li><a href="#pricing">요금제</a></li>
       <li><a href="#contact">문의</a></li>
     </ul>
-    <a href="#" class="cta-btn">앱 다운로드</a>
+    <a href="#" class="cta-btn nav-cta">앱 다운로드</a>
   </nav>
 
   <!-- 히어로 -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>방치된 장비를<br>월수익 자산으로!</h1>
-      <p>P2P 운동장비 구독 플랫폼, 핏쉐어 – 한국·몽골 동시 론칭!</p>
-      <div class="hero-btns">
-        <a href="#" class="cta-btn">앱 다운로드</a>
-        <a href="#" class="cta-btn secondary">몽골 베타 신청</a>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>방치된 장비를<br>월수익 자산으로!</h1>
+        <p>P2P 운동장비 구독 플랫폼, 핏쉐어 – 한국·몽골 동시 론칭!</p>
+        <div class="hero-btns">
+          <a href="#" class="cta-btn">앱 다운로드</a>
+          <a href="#" class="cta-btn secondary">몽골 베타 신청</a>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="images/hero-illustration.svg" alt="운동기구 일러스트" class="hero-img" onerror="this.style.display='none'">
       </div>
     </div>
-    <img src="images/hero-illustration.svg" alt="운동기구 일러스트" class="hero-img">
   </section>
 
   <!-- 주요 기능 -->
@@ -84,13 +92,13 @@
     <h2>실제 사용자 후기</h2>
     <div class="reviews-grid">
       <div class="review-card">
-        <img src="images/user1.jpg" alt="지민" class="review-avatar">
+        <img src="images/user1.jpg" alt="지민" class="review-avatar" onerror="this.style.display='none'">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">“방치하던 러닝머신으로 매달 수익이 생겨요! 앱도 직관적이고, 보험 덕분에 안심돼요.”</p>
         <div class="review-user">지민 (서울)</div>
       </div>
       <div class="review-card">
-        <img src="images/user2.jpg" alt="Anu" class="review-avatar">
+        <img src="images/user2.jpg" alt="Anu" class="review-avatar" onerror="this.style.display='none'">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">“고가 장비를 저렴하게 빌릴 수 있어 좋아요. 현지 창고에서 바로 픽업 가능해서 편리해요!”</p>
         <div class="review-user">Anu (울란바토르)</div>
