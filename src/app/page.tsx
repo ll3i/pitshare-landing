@@ -2,211 +2,147 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-[#F5F5F5] min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-[#03C75A]">PitShare</span>
-          </div>
-          <nav className="hidden md:flex gap-6 text-sm font-medium text-gray-700">
-            <a href="#benefits" className="hover:text-[#03C75A]">혜택</a>
-            <a href="#social" className="hover:text-[#03C75A]">후기</a>
-            <a href="#pricing" className="hover:text-[#03C75A]">요금제</a>
-            <a href="#faq" className="hover:text-[#03C75A]">FAQ</a>
-          </nav>
+    <div className="min-h-screen font-sans bg-[#f5f7fa]">
+      {/* 상단 네비게이션 */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0074FF]/80 via-[#03C75A]/80 to-[#FFD447]/80 backdrop-blur shadow-sm">
+        <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+          <span className="text-2xl font-extrabold text-white tracking-tight">FitShare</span>
+          <ul className="hidden md:flex gap-8 text-white/90 font-semibold text-base">
+            <li><a href="#features" className="hover:text-white transition">기능</a></li>
+            <li><a href="#how" className="hover:text-white transition">플로우</a></li>
+            <li><a href="#testimonials" className="hover:text-white transition">후기</a></li>
+            <li><a href="#pricing" className="hover:text-white transition">요금제</a></li>
+            <li><a href="#cta" className="hover:text-white transition">문의</a></li>
+          </ul>
           <div className="flex gap-2">
-            <a href="#" className="px-4 py-1.5 rounded bg-[#03C75A] text-white font-semibold text-sm hover:bg-[#029e48] transition">회원가입</a>
-            <a href="#" className="px-4 py-1.5 rounded border border-[#03C75A] text-[#03C75A] font-semibold text-sm hover:bg-[#e6f9ef] transition">로그인</a>
+            <button className="bg-white/90 text-[#03C75A] font-bold px-5 py-2 rounded-full shadow hover:bg-white transition">앱 다운로드</button>
           </div>
-        </div>
+        </nav>
       </header>
 
-      <main className="flex-1">
-        {/* Hero */}
-        <section className="bg-gradient-to-br from-[#03C75A] to-[#101010] text-white py-20 px-4">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-                핏쉐어 하나면<br />
-                <span className="text-[#F5F5F5]">어디서나 운동할 수 있어요.</span>
-              </h1>
-              <p className="mb-8 text-lg opacity-90 max-w-md">
-                전국 제휴 헬스장 자유 이용, 1개월 단위 구독, 친구 초대 할인까지!<br />
-                지금 무료 체험으로 새로운 운동 라이프를 시작하세요.
-              </p>
-              <a href="#pricing" className="inline-block px-8 py-3 rounded-full bg-white text-[#03C75A] font-bold text-lg shadow hover:bg-[#e6f9ef] transition">지금 무료 체험하기</a>
-            </div>
-            <div className="flex-1 flex justify-center">
-              <Image src="/next.svg" alt="핏쉐어 일러스트" width={320} height={240} className="drop-shadow-xl" />
-            </div>
-          </div>
-        </section>
+      {/* Hero */}
+      <section className="pt-32 pb-20 bg-gradient-to-br from-[#0074FF] via-[#03C75A] to-[#FFD447] text-white text-center flex flex-col items-center justify-center min-h-[70vh] relative overflow-hidden">
+        {/* 일러스트/이모지 */}
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 opacity-20 pointer-events-none select-none">
+          <span className="text-[12rem] md:text-[16rem]">🏋️‍♂️</span>
+        </div>
+        <h1 className="relative z-10 text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-xl mb-6">방치된 장비를 월수익 자산으로!</h1>
+        <p className="relative z-10 text-lg md:text-2xl font-medium mb-8 opacity-90">P2P 운동장비 구독 플랫폼, 핏쉐어 – 한국·몽골 동시 론칭!<br />앱 다운로드/사전예약으로 얼리버드 혜택!</p>
+        <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <button className="bg-white text-[#03C75A] font-bold px-8 py-4 rounded-full shadow-lg text-lg hover:bg-gray-100 transition">앱 다운로드</button>
+          <button className="bg-white text-[#0074FF] font-bold px-8 py-4 rounded-full shadow-lg text-lg hover:bg-gray-100 transition">몽골 베타 사전예약</button>
+        </div>
+        <div className="relative z-10 flex gap-2 justify-center mt-2">
+          <span className="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">🇰🇷 한국</span>
+          <span className="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">🇲🇳 몽골</span>
+        </div>
+      </section>
 
-        {/* Benefits */}
-        <section id="benefits" className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#03C75A]">핏쉐어 주요 혜택</h2>
-            <p className="text-gray-600">운동을 더 쉽고, 더 자유롭게, 더 저렴하게!</p>
+      {/* Features */}
+      <section id="features" className="py-24 bg-white text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-[#03C75A]">핏쉐어 주요 기능</h2>
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-5xl">🤖</span>
+            <h3 className="font-bold text-xl">AI 매칭</h3>
+            <p className="text-gray-500">수요자와 자동 매칭, 최적화 추천</p>
           </div>
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#F5F5F5] rounded-xl p-8 flex flex-col items-center shadow-sm">
-              <span className="text-4xl mb-4">🏋️‍♂️</span>
-              <h3 className="font-bold text-lg mb-2">전국 제휴 헬스장 자유 이용</h3>
-              <p className="text-gray-600 text-sm">원하는 곳에서 언제든 운동! 위치 제한 없이 제휴 시설을 자유롭게 이용하세요.</p>
-            </div>
-            <div className="bg-[#F5F5F5] rounded-xl p-8 flex flex-col items-center shadow-sm">
-              <span className="text-4xl mb-4">📅</span>
-              <h3 className="font-bold text-lg mb-2">1개월 단위 구독</h3>
-              <p className="text-gray-600 text-sm">장기 약정 NO! 필요한 기간만 부담 없이 구독하고 해지도 간편하게.</p>
-            </div>
-            <div className="bg-[#F5F5F5] rounded-xl p-8 flex flex-col items-center shadow-sm">
-              <span className="text-4xl mb-4">🤝</span>
-              <h3 className="font-bold text-lg mb-2">친구 초대 할인</h3>
-              <p className="text-gray-600 text-sm">친구와 함께하면 모두 할인! 초대할수록 더 커지는 혜택.</p>
-            </div>
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-5xl">📦</span>
+            <h3 className="font-bold text-xl">장비 등록</h3>
+            <p className="text-gray-500">방치된 장비를 간편하게 등록</p>
           </div>
-        </section>
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-5xl">🛡️</span>
+            <h3 className="font-bold text-xl">보험·보증</h3>
+            <p className="text-gray-500">안심 보험/보증 서비스 제공</p>
+          </div>
+        </div>
+      </section>
 
-        {/* Social Proof */}
-        <section id="social" className="py-16 bg-[#F5F5F5]">
-          <div className="max-w-4xl mx-auto text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#03C75A]">사용자 후기 & 제휴사</h2>
-            <p className="text-gray-600">평점 4.8/5.0 | 10,000+ 회원이 선택!</p>
+      {/* How It Works */}
+      <section id="how" className="py-24 bg-[#f0f6ff] text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-[#0074FF]">How It Works</h2>
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center justify-center">
+          <div className="flex-1 flex flex-col items-center gap-4">
+            <span className="text-4xl bg-white rounded-full w-16 h-16 flex items-center justify-center shadow mb-2">1</span>
+            <h3 className="font-bold text-lg mb-1">장비 등록</h3>
+            <p className="text-gray-500">방치된 장비를 간편하게 등록</p>
           </div>
-          <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white rounded-lg p-6 shadow flex flex-col items-center">
-              <span className="text-3xl mb-2">"</span>
-              <p className="text-gray-700 text-sm mb-4">여행 중에도 가까운 헬스장을 쓸 수 있어 정말 편리해요!</p>
-              <div className="flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">🧑‍💼</span>
-                <span className="text-xs text-gray-500">김OO, 직장인</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow flex flex-col items-center">
-              <span className="text-3xl mb-2">"</span>
-              <p className="text-gray-700 text-sm mb-4">1개월만 써보고 싶었는데, 해지도 쉬워서 부담 없어요.</p>
-              <div className="flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">👩‍🎓</span>
-                <span className="text-xs text-gray-500">이OO, 대학생</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow flex flex-col items-center">
-              <span className="text-3xl mb-2">"</span>
-              <p className="text-gray-700 text-sm mb-4">친구랑 같이 쓰니 할인도 받고, 운동도 더 재밌어요!</p>
-              <div className="flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">🧑‍🤝‍🧑</span>
-                <span className="text-xs text-gray-500">박OO, 프리랜서</span>
-              </div>
-            </div>
+          <div className="flex-1 flex flex-col items-center gap-4">
+            <span className="text-4xl bg-white rounded-full w-16 h-16 flex items-center justify-center shadow mb-2">2</span>
+            <h3 className="font-bold text-lg mb-1">AI 매칭</h3>
+            <p className="text-gray-500">수요자와 자동 매칭, 최적화 추천</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <span className="bg-white rounded px-4 py-2 text-xs text-gray-600 shadow">🏢 피트니스월드</span>
-            <span className="bg-white rounded px-4 py-2 text-xs text-gray-600 shadow">🏢 짐프렌즈</span>
-            <span className="bg-white rounded px-4 py-2 text-xs text-gray-600 shadow">🏢 헬스존</span>
-            <span className="bg-white rounded px-4 py-2 text-xs text-gray-600 shadow">🏢 바디핏</span>
+          <div className="flex-1 flex flex-col items-center gap-4">
+            <span className="text-4xl bg-white rounded-full w-16 h-16 flex items-center justify-center shadow mb-2">3</span>
+            <h3 className="font-bold text-lg mb-1">보험·보증</h3>
+            <p className="text-gray-500">안심 보험/보증 서비스 제공</p>
           </div>
-          <a href="#" className="inline-block px-6 py-2 rounded-full border border-[#03C75A] text-[#03C75A] font-semibold text-sm hover:bg-[#e6f9ef] transition">후기 더 보기</a>
-        </section>
+        </div>
+      </section>
 
-        {/* Pricing */}
-        <section id="pricing" className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#03C75A]">요금제 안내</h2>
-            <p className="text-gray-600">필요에 따라 선택하는 합리적인 구독 플랜</p>
+      {/* Testimonials */}
+      <section id="testimonials" className="py-24 bg-white text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-[#03C75A]">실제 사용자 후기</h2>
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="bg-[#f0f6ff] rounded-2xl p-8 flex flex-col items-center shadow">
+            <span className="text-4xl mb-2">🧑‍💼</span>
+            <p className="text-gray-700 mb-2">“방치하던 러닝머신으로 매달 수익이 생겨요! 앱도 직관적이고, 보험 덕분에 안심돼요.”</p>
+            <span className="text-sm text-gray-500">지민(서울)</span>
           </div>
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="rounded-xl border border-gray-200 bg-[#F5F5F5] p-8 flex flex-col items-center shadow-sm">
-              <h3 className="font-bold text-lg mb-2">Basic</h3>
-              <div className="text-2xl font-extrabold mb-2">₩0</div>
-              <p className="text-gray-600 text-sm mb-4">기본 헬스장 이용, 친구 초대 할인</p>
-              <ul className="text-xs text-gray-500 mb-6 space-y-1">
-                <li>제휴 헬스장 월 5회</li>
-                <li>친구 초대 할인</li>
-                <li>앱 알림</li>
-              </ul>
-              <a href="#" className="w-full py-2 rounded bg-[#03C75A] text-white font-semibold text-sm hover:bg-[#029e48] transition text-center">시작하기</a>
-            </div>
-            <div className="rounded-xl border-2 border-[#03C75A] bg-white p-8 flex flex-col items-center shadow-lg scale-105">
-              <h3 className="font-bold text-lg mb-2">Pro</h3>
-              <div className="text-2xl font-extrabold mb-2">₩29,000</div>
-              <p className="text-gray-600 text-sm mb-4">무제한 헬스장 이용, 모든 혜택 포함</p>
-              <ul className="text-xs text-gray-500 mb-6 space-y-1">
-                <li>제휴 헬스장 무제한</li>
-                <li>친구 초대 할인</li>
-                <li>프리미엄 앱 기능</li>
-              </ul>
-              <a href="#" className="w-full py-2 rounded bg-[#03C75A] text-white font-semibold text-sm hover:bg-[#029e48] transition text-center">시작하기</a>
-            </div>
-            <div className="rounded-xl border border-gray-200 bg-[#F5F5F5] p-8 flex flex-col items-center shadow-sm">
-              <h3 className="font-bold text-lg mb-2">Team</h3>
-              <div className="text-2xl font-extrabold mb-2">₩99,000</div>
-              <p className="text-gray-600 text-sm mb-4">10인 이하 팀, 전용 관리 기능</p>
-              <ul className="text-xs text-gray-500 mb-6 space-y-1">
-                <li>모든 Pro 혜택</li>
-                <li>팀 관리 대시보드</li>
-                <li>팀 전용 할인</li>
-              </ul>
-              <a href="#" className="w-full py-2 rounded bg-[#03C75A] text-white font-semibold text-sm hover:bg-[#029e48] transition text-center">시작하기</a>
-            </div>
+          <div className="bg-[#f0f6ff] rounded-2xl p-8 flex flex-col items-center shadow">
+            <span className="text-4xl mb-2">👩‍🎓</span>
+            <p className="text-gray-700 mb-2">“고가 장비를 저렴하게 빌릴 수 있어 좋아요. 현지 창고에서 바로 픽업 가능해서 편리해요!”</p>
+            <span className="text-sm text-gray-500">Anu(울란바토르)</span>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* FAQ */}
-        <section id="faq" className="py-16 bg-[#F5F5F5]">
-          <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-[#03C75A]">자주 묻는 질문</h2>
-            <p className="text-gray-600">궁금한 점이 있으신가요?</p>
+      {/* Pricing */}
+      <section id="pricing" className="py-24 bg-[#f5f7fa] text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-[#0074FF]">요금제 안내</h2>
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center justify-center">
+          <div className="flex-1 bg-white rounded-2xl p-10 shadow flex flex-col items-center">
+            <h3 className="font-bold text-xl mb-2 text-[#03C75A]">한국 월 구독</h3>
+            <p className="text-2xl font-extrabold text-[#03C75A] mb-4">₩29,000~/월</p>
+            <ul className="text-gray-700 text-center space-y-1 mb-6">
+              <li>모든 장비 무제한 이용</li>
+              <li>보험·보증 포함</li>
+              <li>앱 전용 혜택</li>
+            </ul>
+            <button className="bg-[#03C75A] text-white font-bold px-8 py-3 rounded-full shadow hover:bg-[#029e4b] transition">앱 다운로드</button>
           </div>
-          {/* FAQ Accordion */}
-          <div className="max-w-2xl mx-auto space-y-4">
-            {[
-              {q: "가입은 어떻게 하나요?", a: "상단의 '회원가입' 버튼을 클릭해 간단히 가입할 수 있습니다."},
-              {q: "해지는 언제든 가능한가요?", a: "네, 구독은 언제든 해지할 수 있습니다. 남은 기간은 환불되지 않습니다."},
-              {q: "제휴 헬스장은 어디서 확인하나요?", a: "앱 또는 홈페이지에서 제휴 시설 목록을 확인할 수 있습니다."},
-              {q: "친구 초대 할인은 어떻게 적용되나요?", a: "내 초대 링크로 가입한 친구가 결제 시 자동으로 할인됩니다."},
-              {q: "팀 요금제는 어떻게 신청하나요?", a: "문의하기를 통해 별도 상담 후 신청 가능합니다."},
-            ].map((item, i) => (
-              <details key={i} className="bg-white rounded shadow p-4 group">
-                <summary className="font-semibold cursor-pointer text-[#03C75A] group-open:mb-2">{item.q}</summary>
-                <div className="text-gray-700 text-sm mt-2">{item.a}</div>
-              </details>
-            ))}
+          <div className="flex-1 bg-white rounded-2xl p-10 shadow flex flex-col items-center">
+            <h3 className="font-bold text-xl mb-2 text-[#0074FF]">몽골 단기 렌트</h3>
+            <p className="text-2xl font-extrabold text-[#0074FF] mb-4">₮15,000~/7일</p>
+            <ul className="text-gray-700 text-center space-y-1 mb-6">
+              <li>7/14/30일 단기 렌트</li>
+              <li>현지 파트너 창고 픽업</li>
+              <li>보험·보증 포함</li>
+            </ul>
+            <button className="bg-[#0074FF] text-white font-bold px-8 py-3 rounded-full shadow hover:bg-[#005fcc] transition">베타 사전예약</button>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Banner */}
-        <section className="py-12 bg-gradient-to-r from-[#03C75A] to-[#101010] text-white text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">지금 바로 핏쉐어와 함께 운동을 시작하세요!</h2>
-            <p className="mb-6 text-lg opacity-90">회원가입만 해도 1개월 무료 체험 혜택을 드립니다.</p>
-            <a href="#" className="inline-block px-8 py-3 rounded-full bg-white text-[#03C75A] font-bold text-lg shadow hover:bg-[#e6f9ef] transition">무료 체험하기</a>
-          </div>
-        </section>
-      </main>
+      {/* CTA Banner */}
+      <section id="cta" className="py-20 bg-gradient-to-r from-[#03C75A] via-[#0074FF] to-[#FFD447] text-white text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-6 drop-shadow">지금 바로 앱 다운로드 또는 베타 대기자 등록!</h2>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button className="bg-white text-[#03C75A] font-bold px-8 py-4 rounded-full shadow-lg text-lg hover:bg-gray-100 transition">앱 다운로드</button>
+          <button className="bg-white text-[#0074FF] font-bold px-8 py-4 rounded-full shadow-lg text-lg hover:bg-gray-100 transition">몽골 베타 신청</button>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="bg-[#101010] text-gray-300 py-10 mt-8">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8 px-4">
-          <div>
-            <div className="text-xl font-bold text-white mb-2">PitShare</div>
-            <div className="text-sm mb-2">© 2024 핏쉐어 | All rights reserved.</div>
-            <div className="flex gap-3 mt-2">
-              <a href="#" className="hover:text-[#03C75A]">이용약관</a>
-              <a href="#" className="hover:text-[#03C75A]">개인정보처리방침</a>
-            </div>
-          </div>
-          <div>
-            <div className="font-semibold mb-2 text-white">회사 정보</div>
-            <div className="text-sm">핏쉐어(주) | 사업자등록번호 123-45-67890<br/>서울특별시 강남구 테헤란로 123</div>
-          </div>
-          <div>
-            <div className="font-semibold mb-2 text-white">SNS</div>
-            <div className="flex gap-3">
-              <a href="#" className="hover:text-[#03C75A]">Instagram</a>
-              <a href="#" className="hover:text-[#03C75A]">Facebook</a>
-              <a href="#" className="hover:text-[#03C75A]">YouTube</a>
-            </div>
+      <footer className="bg-[#222] text-white py-10 text-center">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-6">
+          <div className="text-base">© 2025 FitShare | 사업자등록번호 123-45-67890 | 서울특별시 강남구 | contact@fitshare.com</div>
+          <div className="flex gap-6 mt-4 md:mt-0 text-2xl justify-center">
+            <a href="#" className="hover:text-[#03C75A] transition" aria-label="홈페이지">🌐</a>
+            <a href="#" className="hover:text-[#0074FF] transition" aria-label="앱">📱</a>
+            <a href="#" className="hover:text-[#FFD447] transition" aria-label="이메일">✉️</a>
           </div>
         </div>
       </footer>
