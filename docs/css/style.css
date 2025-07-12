@@ -67,17 +67,62 @@ body {
   background: #174ea6;
   transform: scale(1.05);
 }
+.cta-btn.nav-cta {
+  margin-left: 24px;
+}
+/* 햄버거 메뉴 */
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+.nav-toggle-label span,
+.nav-toggle-label span:before,
+.nav-toggle-label span:after {
+  display: block;
+  background: var(--primary);
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  position: absolute;
+  transition: 0.2s;
+}
+.nav-toggle-label span {
+  position: relative;
+  top: 14px;
+}
+.nav-toggle-label span:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+}
+.nav-toggle-label span:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+}
 .hero {
+  width: 100%;
+  background: linear-gradient(90deg, #e3f0ff 0%, #f8fafc 100%);
+  padding: 60px 0 40px 0;
+}
+.hero-inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 0 40px 0;
-  background: linear-gradient(90deg, #e3f0ff 0%, #f8fafc 100%);
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
   flex-wrap: wrap;
 }
 .hero-content {
   max-width: 500px;
-  margin-right: 40px;
+  min-width: 260px;
+  margin: 0 0 24px 0;
 }
 .hero-content h1 {
   font-size: 2.8rem;
@@ -93,9 +138,25 @@ body {
   display: flex;
   gap: 16px;
 }
+.hero-img-wrap {
+  min-width: 220px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e3f0ff;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(46,125,255,0.06);
+}
 .hero-img {
   width: 340px;
   max-width: 90vw;
+  min-width: 180px;
+  min-height: 180px;
+  object-fit: contain;
+  border-radius: 24px;
+  background: #e3f0ff;
+  display: block;
 }
 .features-section {
   padding: 80px 0;
@@ -346,6 +407,38 @@ body {
   font-size: 0.95rem;
   margin-top: 16px;
 }
+.hero-inner.hero-2col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  padding: 0 32px;
+}
+.hero-content-left {
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 520px;
+  text-align: left;
+}
+.hero-img-right {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.hero-img-right .hero-img {
+  width: 340px;
+  max-width: 100%;
+  min-width: 220px;
+  min-height: 180px;
+  object-fit: cover;
+  border-radius: 24px;
+  background: #e3f0ff;
+  box-shadow: 0 2px 8px rgba(46,125,255,0.06);
+}
 @media (max-width: 900px) {
   .features-grid, .reviews-grid, .pricing-cards, .contact-info, .flow-steps {
     flex-direction: column;
@@ -359,12 +452,53 @@ body {
   .navbar {
     padding: 16px 12px;
   }
-  .navbar .nav-menu {
-    display: none; /* 모바일 메뉴 토글로 대체 가능 */
+  .nav-menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    display: none;
+    box-shadow: 0 4px 16px rgba(46,125,255,0.08);
+    z-index: 99;
   }
-  .navbar .cta-btn {
-    padding: 0.7em 1.2em;
-    font-size: 1rem;
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 16px 0;
+  }
+  .nav-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+  .nav-toggle-label {
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+  .cta-btn.nav-cta {
+    display: none;
+  }
+  .hero-inner.hero-2col {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 12px;
+  }
+  .hero-content-left {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero-img-right {
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .hero-img-right .hero-img {
+    width: 90vw;
+    min-width: 160px;
+    min-height: 120px;
   }
 }
 @media (max-width: 600px) {
